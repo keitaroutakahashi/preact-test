@@ -1,14 +1,13 @@
 const path = require('path')
+const CleanPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.jsx',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist/js',
+    path: path.resolve(__dirname, 'dist/js'),
   },
-  devtool: 'inline-source-map',
 
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -23,4 +22,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new CleanPlugin.CleanWebpackPlugin()],
 }
