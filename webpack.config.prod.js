@@ -3,22 +3,22 @@ const CleanPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist/js'),
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.js'],
   },
 
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx)$/,
+        use: 'ts-loader',
         exclude: /node_modules/,
-        use: ['babel-loader'],
       },
     ],
   },

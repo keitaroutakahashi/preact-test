@@ -4,4 +4,4 @@ const App = () => {
   return <div>Hello !f!!</div>
 }
 
-render(<App />, document.getElementById('app'))
+render(<App />, document.getElementById('app') as HTMLDivElement)
