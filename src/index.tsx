@@ -1,7 +1,4 @@
 import { h, render } from 'preact'
-
-const App = () => {
-  return <div>Hello !f!!</div>
-}
+import App from './app/app'
 
 render(<App />, document.getElementById('app') as HTMLDivElement)
